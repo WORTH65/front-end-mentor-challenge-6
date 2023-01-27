@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg" sizes="32x32" href="./assets/shared/logo.svg" />
+
+        <link rel="stylesheet" href="../static/css/common.min.css" />
+        <link rel="stylesheet" href="../static/css/index.min.css" />
+        <title>Space tourism - HOME</title>
+    </head>
+
+    <body>
+
+        <!-- Background Image -->
+        <img src="assets/home/background-home-desktop.jpg" alt="Space Tourism Home Image" class="backgroundImage" />
+        <img src="assets/home/background-home-tablet.jpg" alt="Space Tourism Home Image" class="backgroundImageMd" />
+        <img src="assets/home/background-home-mobile.jpg" alt="Space Tourism Home Image" class="backgroundImageSm" />
+
+        <!-- Header Section -->
+        <header class="siteHeader">
+            <div class="headerBackdrop"></div>
+            <a>
+                <img src="assets/shared/logo.svg" alt="Space Tourism Logo" class="siteLogo" />
+            </a>
+            <div id="navContainer" class="container">
+                <div class="headerLine"></div>
+                <nav id="headerRight" class="headerRight">
+                    <button type="button" onclick="toggleNav()" class="btn hamburgerIcon close">
+                        <img src="assets/shared/icon-close.svg" alt="close menu" />
+                    </button>
+                    <a class="headerLink active fontBarlowCon"><strong>00 &nbsp;</strong>HOME</a>
+                    <a href="destinations.html" class="headerLink fontBarlowCon"><strong>01 &nbsp;</strong>DESTINATION</a>
+                    <a href="index.html" class="headerLink fontBarlowCon"><strong>02 &nbsp;</strong>CREW</a>
+                    <a href="index.html" class="headerLink fontBarlowCon"><strong>03 &nbsp;</strong>TECHNOLOGY</a>
+                </nav>
+                <button type="button" onclick="toggleNav()" class="btn hamburgerIcon">
+                    <img src="assets/shared/icon-hamburger.svg" alt="open menu" />
+                </button>
+            </div>
+        </header>
+        <!-- /Header Section -->
+
+        <!-- Main Section -->
+        <main class="mainContainer">
+            <section class="contentWrapper">
+                <div class="container">
+                    <article class="contentLeft">
+                        <h2 class="blueHeading">SO, YOU WANT TO TRAVEL TO</h2>
+                        <h1 class="bigHeading colorWhite">SPACE</h1>
+                        <p>
+                            Let’s face it; if you want to go to space, you might as well
+                            genuinely go to outer space and not hover kind of on the
+                            edge of it. Well sit back, and relax because we’ll give you a
+                            truly out of this world experience!
+                        </p>
+                    </article>
+                    <div class="explore">
+                        <button type="button" class="btn exploreBtn fontBellefair">
+                            <p class="colorDarkBlue">EXPLORE</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- /Main Section -->
+
+        <script src="../static/js/common.js"></script>
+    </body>
+</html>

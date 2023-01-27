@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg" sizes="32x32" href="./assets/shared/logo.svg" />
+
+        <link rel="stylesheet" href="../static/css/common.min.css" />
+        <link rel="stylesheet" href="../static/css/destinations.min.css" />
+        <title>Space tourism - DESTINATION</title>
+    </head>
+
+    <body>
+
+        <!-- Background Image -->
+        <img src="assets/destination/background-destination-desktop.jpg" alt="Space Tourism Destination Image" class="backgroundImage" />
+        <img src="assets/destination/background-destination-tablet.jpg" alt="Space Tourism Destination Image" class="backgroundImageMd" />
+        <img src="assets/destination/background-destination-mobile.jpg" alt="Space Tourism Destination Image" class="backgroundImageSm" />
+
+        <!-- Header Section -->
+        <header class="siteHeader">
+            <div class="headerBackdrop"></div>
+            <a href="index.html">
+                <img src="assets/shared/logo.svg" alt="Space Tourism Logo" class="siteLogo" />
+            </a>
+            <div id="navContainer" class="container">
+                <div class="headerLine"></div>
+                <nav id="headerRight" class="headerRight">
+                    <button type="button" onclick="toggleNav()" class="btn hamburgerIcon close">
+                        <img src="assets/shared/icon-close.svg" alt="close menu" />
+                    </button>
+                    <a href="index.html" class="headerLink fontBarlowCon"><strong>00 &nbsp;</strong>HOME</a>
+                    <a href="index.html" class="headerLink active fontBarlowCon"><strong>01 &nbsp;</strong>DESTINATION</a>
+                    <a href="index.html" class="headerLink fontBarlowCon"><strong>02 &nbsp;</strong>CREW</a>
+                    <a href="index.html" class="headerLink fontBarlowCon"><strong>03 &nbsp;</strong>TECHNOLOGY</a>
+                </nav>
+                <button type="button" onclick="toggleNav()" class="btn hamburgerIcon">
+                    <img src="assets/shared/icon-hamburger.svg" alt="open menu" />
+                </button>
+            </div>
+        </header>
+        <!-- /Header Section -->
+
+        <!-- Main Section -->
+        <main class="mainContainer">
+            <section class="contentWrapper">
+                <div class="container">
+                    <!-- Main Heading -->
+                    <h1 class="subPageHeading"><span>01 &nbsp;</span>PICK YOUR DESTINATION</h1>
+                    <!-- Content Container -->
+                    <div class="contentFlex">
+                        <!-- Image -->
+                        <div class="destinationImageWrapper">
+                            <div id="destinationImage" class="destinationImage"></div>
+                        </div>
+                        <!-- Controls -->
+                        <div class="contentRight">
+                            <nav class="destinationControl">
+                                <ul></ul>
+                            </nav>
+                            <!-- Content -->
+                            <div class="destinationInfoWrapper">
+                                <div id="destinationContainer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- /Main Section -->
+
+        <script src="../static/js/common.js"></script>
+        <script src="../static/js/destinations.js"></script>
+    </body>
+</html>

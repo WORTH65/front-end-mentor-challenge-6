@@ -1,0 +1,418 @@
+// Variables
+@import 'variables.scss';
+// Page Styling
+* {
+    margin: 0;
+    padding: 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+img, svg, video, picture {
+    display: block;
+    max-width: 100%;
+    &::selection {
+        background-color: transparent;
+    }
+    &::-moz-selection {
+        background-color: transparent;
+    }
+}
+input, textarea, button, select {
+    font: inherit;
+}
+html {
+    font-size: 18px;
+    color-scheme: dark light;
+}
+body {
+    overflow-x: hidden;
+    background-color: $darkBlue;
+    color: $blue;
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+}
+// Typography
+.bigHeading {
+    color: white;
+    font-family: 'Bellefair', serif;
+    font-size: $bigHeading;
+}
+.mainHeading {
+    color: white;
+    font-family: 'Bellefair', serif;
+    font-size: $mainHeading;
+}
+.heading {
+    color: white;
+    font-family: 'Bellefair', serif;
+    font-size: $heading;
+}
+.subHeading {
+    color: white;
+    font-family: 'Bellefair', serif;
+    font-family: $subHeading;
+}
+.blueHeading {
+    letter-spacing: .2rem;
+    font-size: $blueHeading;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.subPageHeading {
+    font-size: $subPageHeading;
+    letter-spacing: .27rem;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.fontBarlow {
+    font-family: 'Barlow', sans-serif;
+}
+.fontBarlowCon {
+    font-family: 'Barlow Condensed', sans-serif;
+}
+.fontBellefair {
+    font-family: 'Bellefair', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+p {
+    line-height: 1.78rem;
+}
+p, a, input, textarea, select, button {
+    font-size: 1rem;
+}
+
+// Individual Styling Classes
+.container {
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.mainContainer {
+    margin: 1em auto 3em auto;
+}
+.backgroundImage, .backgroundImageMd, .backgroundImageSm {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    object-fit: cover;
+    transform: translate(0, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+.backgroundImageMd, .backgroundImageSm {
+    display: none;
+}
+hr.transparent {
+    border: none;
+    border-bottom: .5px solid rgba(255, 255, 255, .2);
+}
+.btn {
+    display: inline-block;
+    color: $blue;
+    font-weight: 300;
+    cursor: pointer;
+}
+.exploreBtn {
+    background-color: white;
+    border-radius: 100vw;
+    color: $darkBlue;
+    height: 12em;
+    width: 12em;
+    position: relative;
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: $blueHeading;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+    &::after {
+        content: "";
+        z-index: -1;
+        width: 12em;
+        height: 12em;
+        pointer-events: none;
+        position: absolute;
+        border-radius: 100vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, .2);
+        transition: .3s;
+    }
+    &:hover::after {
+        width: 16em;
+        height: 16em;
+    }
+}
+.btnPrimary {
+    position: relative;
+    padding-bottom: .7em;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: .2em solid white;
+        opacity: 0;
+    }
+    &:hover::after {
+        opacity: .6;
+    }
+    &.active {
+        &::after {
+            opacity: 1;
+        }
+        color: white;
+    }
+}
+.colorWhite {
+    color: white;
+}
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+// Actual Page Styling
+.siteHeader {
+    position: relative;
+    padding: 2em 0;
+    .siteLogo {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        height: 3em;
+        transform: translate(-50%, -50%);
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .headerBackdrop {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        background-color: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(25px);
+        width: 56.6%;
+        height: 5.32em;
+        pointer-events: none;
+        z-index: -1;
+    }
+    .headerLine {
+        border-bottom: .5px solid rgba(255, 255, 255, .4);
+        width: 44%;
+    }
+    .headerRight {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .headerLink {
+            color: white;
+            position: relative;
+            padding: 2em 0;
+            font-weight: 300;
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-bottom: .2em solid white;
+                width: 100%;
+                opacity: 0;
+                transition: .3s;
+            }
+            &:hover::after {
+                opacity: .6;
+            }
+            &.active {
+                pointer-events: none;
+            }
+            &.active::after {
+                opacity: 1;
+            }
+        }
+        .headerLink + .headerLink {
+            margin-left: 3.4em;
+        }
+    }
+    .hamburgerIcon {
+        display: none;
+        img {
+            height: 1.2em;
+        }
+    }
+}
+
+// Media Queries
+@media only screen and (max-width: 1200px) {
+    .siteHeader {
+        .headerLine {
+            display: none;
+        }
+        .container {
+            justify-content: flex-end;
+        }
+        .headerLink {
+            strong {
+                display: none;
+            }
+        }
+        .siteLogo {
+            left: 10%;
+        }
+    }
+}
+@media only screen and (max-width: 991px) {
+    .siteHeader {
+        .headerBackdrop {
+            width: 70%;
+        }
+    }
+    .backgroundImage {
+        display: none;
+    }
+    .backgroundImageMd {
+        display: block;
+    }
+}
+@media only screen and (max-width: 740px) {
+    .siteHeader .headerBackdrop {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 575px) {
+    html {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        position: relative;
+    }
+
+    .backgroundImage, .backgroundImageMd {
+        display: none;
+    }
+
+    .backgroundImageSm {
+        display: block;
+    }
+
+    .siteHeader {
+        padding: 3em 0;
+        .headerBackdrop {
+            display: none;
+        }
+        .siteLogo {
+            left: 13%;
+        }
+        // .container {
+        //     overflow: hidden visible;
+        //     &.show {
+        //         overflow: visible;
+        //     }
+        // }
+        .headerRight {
+            position: absolute;
+            top: -3em;
+            right: -5.6%;
+            padding: 3em 0;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            overflow: hidden;
+            width: 0;
+            z-index: 1012;
+            min-height: 100vh;
+            background-color: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(40px);
+            transition: .3s;
+            .hamburgerIcon {
+                margin-bottom: 4em;
+                margin-right: 10%;
+            }
+            .headerLink {
+                padding: .2em;
+                display: block;
+                width: 90%;
+                margin-left: auto;
+                &+.headerLink {
+                    margin: 0;
+                    margin-top: 1.4em;
+                    margin-left: auto;
+                }
+                &::after {
+                    width: 0;
+                    height: 100%;
+                    border: none;
+                    border-right: .2em solid white;
+                    right: 0;
+                    left: auto;
+                }
+            }
+            &.show {
+                width: 70%;
+            }
+        }
+        .headerLink {
+            strong {
+                display: inline;
+            }
+        }
+        .hamburgerIcon {
+            display: block;
+            img {
+                height: 1.2em;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    html {
+        font-size: 13px;
+    }
+    .bigHeading {
+        font-size: $bigHeadingSm;
+    }
+    // .mainHeading {
+    //     font-size: $mainHeading;
+    // }
+    // .heading {
+    //     font-size: $heading;
+    // }
+    // .subHeading {
+    //     font-family: $subHeading;
+    // }
+    // .blueHeading {
+    //     font-size: $blueHeading;
+    // }
+    .subPageHeading {
+        font-size: $subPageHeadingSm;
+    }
+    p, a, input, textarea, select, button {
+        font-size: 1.1rem;
+    }
+}

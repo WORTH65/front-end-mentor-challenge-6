@@ -1,0 +1,112 @@
+h1 span {
+    opacity: .4;
+}
+
+.contentWrapper {
+    text-align: center;
+}
+// Main Content
+.contentFlex {
+    display: flex;
+    flex-direction: column;
+    .destinationInfoWrapper, .destinationImageWrapper {
+        overflow: hidden;
+    }
+    .destinationImage {
+        margin: 2em 0;
+        display: flex;
+        align-items: center;
+        transition: transform .3s;
+        img {
+            height: 14em;
+            margin: 0;
+            min-width: 100%;
+            object-fit: contain;
+        }
+    }
+    .destinationControl {
+        ul {
+            width: 80%;
+            margin: 0 auto 1em auto;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    #destinationContainer {
+        display: flex;
+        transition: transform .3s;
+        .destinationContent {
+            min-width: 100%;
+            transition: transform .3s;
+        }
+    }
+    hr.transparent {
+        margin: 2em 0;
+    }
+    .heading {
+        margin-bottom: .6em;
+    }
+    .mainHeading {
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (min-width: 575px) {
+    h1 {
+        text-align: left;
+    }
+    .contentFlex {
+        .destinationImage img {
+            height: 20em;
+        }
+        .destinationControl {
+            ul {
+                width: 80%;
+                justify-content: center;
+                li+li {
+                    margin-left: 2em;
+                }
+            }
+        }
+        .mainHeading {
+            margin-top: .2em;
+        }
+    }
+}
+@media only screen and (min-width: 991px) {
+    h1 {
+        margin-bottom: 2em;
+    }
+    .contentWrapper {
+        text-align: left;
+    }
+    .contentFlex {
+        flex-direction: row;
+        align-items: center;
+        & > * {
+            width: 50%;
+        }
+        .destinationImage {
+            img {
+                height: 24em;
+            }
+        }
+        .destinationControl {
+            ul {
+                width: 100%;
+                justify-content: flex-start;
+                li+li {
+                    margin-left: 2em;
+                }
+            }
+        }
+        .distanceTravel {
+            display: flex;
+            & > * {
+                width: 50%;
+            }
+        }
+    }
+}
